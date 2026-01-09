@@ -37,7 +37,6 @@ export interface Reputation {
   total_actions: number
   successful_actions: number
   failed_actions: number
-  success_rate: number
   last_calculated: string
 }
 

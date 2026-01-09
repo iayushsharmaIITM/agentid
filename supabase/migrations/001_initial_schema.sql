@@ -149,7 +149,7 @@ CREATE POLICY "Owners can update own data"
 -- Owners can view their own agents
 CREATE POLICY "Owners can view own agents"
     ON agents FOR SELECT
-    USING (owner_id::text = auth.uid()::text);
+    USING (owner_id::text = auth.uid()::text OR status = 'active');
 
 -- Owners can insert their own agents
 CREATE POLICY "Owners can create own agents"
@@ -160,11 +160,6 @@ CREATE POLICY "Owners can create own agents"
 CREATE POLICY "Owners can update own agents"
     ON agents FOR UPDATE
     USING (owner_id::text = auth.uid()::text);
-
--- Anyone can read active agents (for verification)
-CREATE POLICY "Anyone can view active agents"
-    ON agents FOR SELECT
-    USING (status = 'active');
 
 -- Owners can view actions of their agents
 CREATE POLICY "Owners can view own agent actions"

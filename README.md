@@ -41,7 +41,7 @@ agent = client.register(
     description="Handles tier-1 support queries"
 )
 
-print(agent.id)  # aid_7x8k2m...
+print(agent['id'])  # aid_7x8k2m...
 ```
 
 ### ✅ Verification
@@ -145,7 +145,7 @@ npm run dev
 - [ ] Dashboard UI
 - [ ] Agent-to-agent authentication
 - [ ] Advanced reputation (PageRank-style)
-- [ ] Compliance &amp; audit tools
+- [ ] Compliance & audit tools
 
 ---
 
